@@ -4,7 +4,7 @@
 extern CTexture Texture;
 
 CEnemy::CEnemy()
-: mFx(1.0f), mFy(0.0f), mFireCount(60)
+: mFx(1.0f), mFy(0.0f)
 {
 	mTag = EENEMY;
 	w = 25;
@@ -23,7 +23,7 @@ void CEnemy::Update() {
 		for (int i = 0; i < 4; i++) {
 			CBullet *EBullet = new CBullet();
 			//座標設定
-			EBullet->x = x;
+    		EBullet->x = x;
 			EBullet->y = y;
 			//移動量設定
 			EBullet->mFx = (i - 2) % 2 * 2;
@@ -34,7 +34,7 @@ void CEnemy::Update() {
 		}
 		mFireCount = 60;
 	}
-	x += mFx;
+  	x += mFx;
 	y += mFy;
 }
 /*
@@ -52,12 +52,8 @@ bool CEnemy::Collision(const CRectangle &r) {
 			mFx *= -1;
 			mFy *= -1;
 			break;
-		case EPLAYERBULLET:
-			//プレイヤーの弾に当たると、無効にする
-			mEnabled = false;
-			break;
 		case EPLAYER:
-			mEnabled = false;
+			
 			break;
 		}
 		return true;

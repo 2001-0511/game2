@@ -92,4 +92,16 @@ void CPlayer::Collision(CRectangle *ri, CRectangle *ry) {
 			}
 		}
 	}
+	if (ry->mTag == EENEMY){
+		int mx, my;
+		if (CRectangle::Collision(ry, &mx, &my)){
+			if (abs(mx) < abs(my)) {
+				x += mx;
+			}
+			else {
+				y += my;
+				 
+			}
+		}
+	}
 }
