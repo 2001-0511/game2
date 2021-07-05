@@ -9,7 +9,7 @@
 #include "CText.h"
 #include <stdio.h>
 
-int Time = 30 * 60;
+int Time = 60*150;
 
 void CSceneGame::Init() {
 	//ÉVÅ[ÉìÇÃê›íË
@@ -35,7 +35,7 @@ void CSceneGame::Init() {
 		{  1, 2, 0, 4, 2, 0, 2, 1 },
 		{  1, 0, 0, 2, 0, 0, 0, 1 },
 		{  1, 2, 0, 5, 0, 2, 0, 1 },
-		{  1, 0, 2, 0, 0, 0, 0, 1 },
+		{  1, 0, 2, 0, 3, 0, 0, 1 },
 		{  1, 0, 4, 2, 2, 0, 0, 1 },
 		{  1, 2, 0, 0, 0, 0, 2, 1 },
 		{  1, 0, 2, 0, 2, 4, 0, 1 },
@@ -56,7 +56,7 @@ void CSceneGame::Init() {
 		{  1, 2, 0, 4, 2, 0, 2, 1 },
 		{  1, 0, 0, 2, 0, 4, 0, 1 },
 		{  1, 2, 0, 0, 2, 0, 2, 1 },
-		{  1, 0, 2, 3, 0, 2, 0, 1 },
+		{  1, 0, 2, 0, 0, 2, 0, 1 },
 		{  1, 1, 1, 1, 1, 1, 1, 1 },
 	};
 
@@ -170,7 +170,7 @@ void CSceneGame::Update() {
 	glLoadIdentity();    //çsóÒÇèâä˙âª
 
 	char buf[10];
-	sprintf(buf, "%d", Time / 360);
+	sprintf(buf, "%d", Time / 60);
 	CText::DrawString(buf, 0, -500, 16, 16);
 
 	CText::DrawString("Time", -150, -500, 16, 16);
