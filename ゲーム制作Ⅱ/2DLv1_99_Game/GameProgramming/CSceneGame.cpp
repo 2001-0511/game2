@@ -7,6 +7,9 @@
 #include "CPlayer.h"
 #include "CEnemy.h"
 #include "CText.h"
+#include <stdio.h>
+
+int Time = 30 * 60;
 
 void CSceneGame::Init() {
 	//ƒV[ƒ“‚ÌÝ’è
@@ -39,8 +42,8 @@ void CSceneGame::Init() {
 		{  1, 0, 0, 0, 0, 2, 0, 1 },
 		{  1, 0, 5, 0, 2, 0, 2, 1 },
 		{  1, 0, 2, 0, 0, 0, 0, 1 },
-		{  1, 2, 0, 5, 0, 2, 0, 1 },
-		{  1, 0, 2, 0, 4, 0, 0, 1 },
+		{  1, 2, 5, 0, 0, 2, 0, 1 },
+		{  1, 0, 2, 0, 0, 5, 0, 1 },
 		{  1, 0, 0, 2, 0, 0, 0, 1 },
 		{  1, 2, 0, 0, 5, 2, 0, 1 },
 		{  1, 0, 2, 0, 0, 0, 2, 1 },
@@ -96,6 +99,14 @@ void CSceneGame::Init() {
 				//¶‚ÖˆÚ“®
 				Enemy->mFx = -3;
 			}
+			//if (map[j][i] == 6){
+				//CMap*Map = new CMap();
+				//Map->mEnabled = true;
+				//Map->x = i * 100 - 350;
+				//Map->y = j * -100 + 250;
+				//Map-> w = 40;
+				//Map->h = 10;
+			//}
 		}
 	}
 }
@@ -158,10 +169,24 @@ void CSceneGame::Update() {
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();    //s—ñ‚ð‰Šú‰»
 
+	char buf[10];
+	sprintf(buf, "%d", Time / 360);
+	CText::DrawString(buf, 0, -500, 16, 16);
+
+	CText::DrawString("Time", -150, -500, 16, 16);
+	if (Time > 0){
+		Time--;
+	}
+	
+	if (Time == 0){
+		CText::DrawString("GAME OVER", -300, -50, 32, 32);
+	}
+
 	for (int i = 0; i < VectorRect.size(); i++) {
 		//•`‰æˆ—
 		VectorRect[i]->Render();
 	}
+	
 }
 
 

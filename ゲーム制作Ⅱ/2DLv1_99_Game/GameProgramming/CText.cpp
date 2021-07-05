@@ -22,3 +22,10 @@ void CText::DrawString(char *s, int x, int y, int w, int h) {
 		x += w * 2;
 	}
 }
+//s:文字列データ x:先頭文字のX座標 y:先頭文字のY座標
+void CText::DrawString(const char *s, int x, int y, int w, int h){
+	for (int i = 0; s[i] != '\0'; i++){
+		DrawChar(s[i], x, y, w, h);
+		x += w * 2;
+	}
+}

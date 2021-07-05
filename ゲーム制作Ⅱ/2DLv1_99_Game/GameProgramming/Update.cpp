@@ -7,12 +7,15 @@
 #include "CText.h"
 #include "CSceneManager.h"
 
+
 // テクスチャクラスのインクルード
 #include "CTexture.h"
 CTexture Texture; //マップの画像
 
 //シーンマネージャのインスタンス
 CSceneManager SceneManager;
+
+
 
 //Init関数
 //最初に一度だけ呼ばれる関数
@@ -26,4 +29,6 @@ void Init() {
 void Update() {
 	//シーンマネージャの更新
 	SceneManager.Update();
+
+	
 }
