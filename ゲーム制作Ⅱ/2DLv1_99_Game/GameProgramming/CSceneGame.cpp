@@ -9,7 +9,7 @@
 #include "CText.h"
 #include <stdio.h>
 
-int Time = 60*150;
+int Time = 60*120;
 
 void CSceneGame::Init() {
 	//シーンの設定
@@ -35,7 +35,7 @@ void CSceneGame::Init() {
 		{  1, 2, 0, 4, 2, 0, 2, 1 },
 		{  1, 0, 0, 2, 0, 0, 0, 1 },
 		{  1, 2, 0, 5, 0, 2, 0, 1 },
-		{  1, 0, 2, 0, 3, 0, 0, 1 },
+		{  1, 0, 2, 0, 0, 0, 0, 1 },
 		{  1, 0, 4, 2, 2, 0, 0, 1 },
 		{  1, 2, 0, 0, 0, 0, 2, 1 },
 		{  1, 0, 2, 0, 2, 4, 0, 1 },
@@ -56,7 +56,7 @@ void CSceneGame::Init() {
 		{  1, 2, 0, 4, 2, 0, 2, 1 },
 		{  1, 0, 0, 2, 0, 4, 0, 1 },
 		{  1, 2, 0, 0, 2, 0, 2, 1 },
-		{  1, 0, 2, 0, 0, 2, 0, 1 },
+		{  1, 0, 2, 3, 0, 2, 0, 1 },
 		{  1, 1, 1, 1, 1, 1, 1, 1 },
 	};
 
@@ -169,23 +169,36 @@ void CSceneGame::Update() {
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();    //行列を初期化
 
+	for (int i = 0; i < VectorRect.size(); i++) {
+		//描画処理
+		VectorRect[i]->Render();
+	}
+
+	//画面投影範囲の変更
+	//行列をプロジェクションモードに変更
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();   //行列を初期化
+	//2Dの画面を設定
+	gluOrtho2D(-400, 400, -600, 0);
+	//行列をモデルビューモードへ変更
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();    //行列を初期化
+
+
 	char buf[10];
 	sprintf(buf, "%d", Time / 60);
-	CText::DrawString(buf, 0, -500, 16, 16);
+	CText::DrawString(buf, 320, -50, 16, 16);
 
-	CText::DrawString("Time", -150, -500, 16, 16);
+	CText::DrawString("Time", 170, -50, 16, 16);
 	if (Time > 0){
 		Time--;
 	}
 	
 	if (Time == 0){
-		CText::DrawString("GAME OVER", -300, -50, 32, 32);
+		CText::DrawString("GAME OVER", -250, -300, 32, 32);
 	}
 
-	for (int i = 0; i < VectorRect.size(); i++) {
-		//描画処理
-		VectorRect[i]->Render();
-	}
+	
 	
 }
 
