@@ -1,6 +1,7 @@
 #include "CPlayer.h"
 #include "CKey.h"
 #include "CBullet.h"
+#include "CSceneGame.h"
 
 //extern：他のソースファイルの外部変数にアクセスする宣言
 extern CTexture Texture;
@@ -10,9 +11,12 @@ extern CTexture Texture;
 
 CPlayer* CPlayer::spInstance;
 
+int CPlayer::Gameclear = 0;
+int CPlayer::Gameover = 0;
+
 CPlayer::CPlayer()
 : mFx(1.0f), mFy(0.0f)
-, FireCount(0), mVj(0), mJump(0)   //0はジャンプ可能
+, FireCount(0), mVj(0), mJump(0)  //0はジャンプ可能
 {
 	mTag = EPLAYER;
 	spInstance = this;
@@ -62,7 +66,16 @@ void CPlayer::Update() {
 	mVj -= G;
 	//速度分移動
 	y += mVj;
-	
+
+	if (CPlayer::Gameclear = 1){
+	//	x = 0;
+
+	}
+
+	if (CPlayer::Gameover = 1){
+	//	x = 0;
+	}
+
 }
 
 void CPlayer::Render() {

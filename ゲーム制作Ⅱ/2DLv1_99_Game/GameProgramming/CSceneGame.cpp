@@ -9,7 +9,9 @@
 #include "CText.h"
 #include <stdio.h>
 
-int Time = 60*120;
+int Time = 60*80;
+
+
 
 void CSceneGame::Init() {
 	//シーンの設定
@@ -32,7 +34,7 @@ void CSceneGame::Init() {
 		{  1, 2, 2, 0, 2, 2, 2, 1 },
 		{  1, 4, 0, 2, 0, 5, 0, 1 },
 		{  1, 0, 2, 0, 0, 2, 0, 1 },
-		{  1, 2, 0, 4, 2, 0, 2, 1 },
+		{  1, 2, 0, 5, 2, 0, 2, 1 },
 		{  1, 0, 0, 2, 0, 0, 0, 1 },
 		{  1, 2, 0, 5, 0, 2, 0, 1 },
 		{  1, 0, 2, 0, 0, 0, 0, 1 },
@@ -82,7 +84,7 @@ void CSceneGame::Init() {
 				Map->h = 10;
 			}
 			if (map[j][i] == 3){
-				Player->y=  j *- 100 + 250;
+				Player->y = j *-100 + 250;
 
 			}
 			if (map[j][i] == 4){
@@ -96,17 +98,11 @@ void CSceneGame::Init() {
 				CEnemy *Enemy = new CEnemy();
 				Enemy->x = i * 100 - 350;
 				Enemy->y = j * -100 + 250;
-				//左へ移動
-				Enemy->mFx = -3;
+				//右へ移動
+				Enemy->mFx = 3;
 			}
-			//if (map[j][i] == 6){
-				//CMap*Map = new CMap();
-				//Map->mEnabled = true;
-				//Map->x = i * 100 - 350;
-				//Map->y = j * -100 + 250;
-				//Map-> w = 40;
-				//Map->h = 10;
-			//}
+			
+			
 		}
 	}
 }
@@ -153,6 +149,8 @@ void CSceneGame::Update() {
 		}
 	}
 
+	
+
 	//描画範囲変数の作成　範囲左 :-300 範囲右 : 300 固定
 	double mTop, mBottom, mLeft = -300.0, mRight = 300;
 	//画面範囲下の設定
@@ -196,10 +194,13 @@ void CSceneGame::Update() {
 	
 	if (Time == 0){
 		CText::DrawString("GAME OVER", -250, -300, 32, 32);
+		CPlayer::Gameover = 0;
 	}
 
-	
-	
+	if (CPlayer::Gameclear = 0){
+		CText::DrawString("GAME CLEAY", -280, -300, 32, 32);
+		Time++;
+	}
 }
 
 

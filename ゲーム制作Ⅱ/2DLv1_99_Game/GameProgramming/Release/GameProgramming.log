@@ -1,17 +1,33 @@
-﻿2018/07/25 15:58:13 にビルドを開始しました。
-     1>ノード 2 上のプロジェクト "C:\Users\Game\Desktop\2018\1年_C++実習\2DLv1_00_Game\GameProgramming\GameProgramming.vcxproj" (Build ターゲット)。
+﻿2021/08/03 14:27:13 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "C:\Users\81906\OneDrive\デスクトップ\Repositories\game2\ゲーム制作Ⅱ\2DLv1_99_Game\GameProgramming\GameProgramming.vcxproj" (Build ターゲット)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Update.cpp main.cpp
-         Update.cpp
-         main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CSceneGame.cpp
+         CSceneGame.cpp
+     1>CSceneGame.cpp(116): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
+     1>CSceneGame.cpp(125): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
+     1>CSceneGame.cpp(127): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
+     1>CSceneGame.cpp(170): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
+     1>CSceneGame.cpp(187): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 'sprintf' の宣言を確認してください。
+     1>CSceneGame.cpp(214): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Game\Desktop\2018\1年_C++実習\2DLv1_00_Game\Release\GameProgramming.exe" /INCREMENTAL:NO /NOLOGO glew32.lib glfw3.lib glfw3dll.lib glut32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Game\Desktop\2018\1年_C++実習\2DLv1_00_Game\Release\GameProgramming.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Game\Desktop\2018\1年_C++実習\2DLv1_00_Game\Release\GameProgramming.lib" /MACHINE:X86 /SAFESEH Release\Update.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\81906\OneDrive\デスクトップ\Repositories\game2\ゲーム制作Ⅱ\2DLv1_99_Game\Release\GameProgramming.exe" /INCREMENTAL:NO /NOLOGO glew32.lib glfw3.lib glfw3dll.lib glut32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\81906\OneDrive\デスクトップ\Repositories\game2\ゲーム制作Ⅱ\2DLv1_99_Game\Release\GameProgramming.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\81906\OneDrive\デスクトップ\Repositories\game2\ゲーム制作Ⅱ\2DLv1_99_Game\Release\GameProgramming.lib" /MACHINE:X86 /SAFESEH Release\CBullet.obj
+         Release\CEnemy.obj
+         Release\CKey.obj
+         Release\CPlayer.obj
+         Release\CRectangle.obj
+         Release\CSceneGame.obj
+         Release\CSceneManager.obj
+         Release\CSceneTitle.obj
+         Release\CText.obj
+         Release\CTexture.obj
+         Release\Update.obj
          Release\main.obj
          コード生成しています。
          コード生成が終了しました。
-         GameProgramming.vcxproj -> C:\Users\Game\Desktop\2018\1年_C++実習\2DLv1_00_Game\Release\GameProgramming.exe
-     1>プロジェクト "C:\Users\Game\Desktop\2018\1年_C++実習\2DLv1_00_Game\GameProgramming\GameProgramming.vcxproj" (Build ターゲット) のビルドが完了しました。
+         GameProgramming.vcxproj -> C:\Users\81906\OneDrive\デスクトップ\Repositories\game2\ゲーム制作Ⅱ\2DLv1_99_Game\Release\GameProgramming.exe
+     1>プロジェクト "C:\Users\81906\OneDrive\デスクトップ\Repositories\game2\ゲーム制作Ⅱ\2DLv1_99_Game\GameProgramming\GameProgramming.vcxproj" (Build ターゲット) のビルドが完了しました。
 
 ビルドに成功しました。
 
-経過時間 00:00:01.91
+経過時間 00:00:01.51

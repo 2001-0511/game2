@@ -9,6 +9,8 @@ public:
 	int FireCount;
 	int mJump;    //ジャンプフラグ
 	int mVj;      //ジャンプ用速度
+	static int Gameover;
+	static int Gameclear;
 	static CPlayer* spInstance;
 	CPlayer();
 	void Update();
